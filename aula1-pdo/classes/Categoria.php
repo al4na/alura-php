@@ -8,6 +8,14 @@ class Categoria
     public $id;
     public $nome;
 
+    public function __construct($id = false)
+    {
+        if ($id) {
+            $this->id = $id;
+            $this->carregar();
+        }
+    }
+
     public function listar()
     {
         $query = "SELECT id, nome FROM categorias";
@@ -32,7 +40,7 @@ class Categoria
         $query = "SELECT id, nome FROM categorias WHERE id=" . $this->id;
         $lista = Conexao::pegarConexao()->query($query)->fetchAll();
         foreach ($lista as $linha) {
-            return $linha;
+            $this->nome = $linha['nome'];
         }
     }
 }

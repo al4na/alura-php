@@ -1,9 +1,6 @@
 <?php require_once 'classes/Categoria.php' ?>
 <?php
-$categoria = new Categoria();
-$categoria->id = $_GET['id'];
-
-$resultado = $categoria->carregar();
+$categoria = new Categoria($_GET['id']);
 ?>
 
 <?php require_once 'cabecalho.php' ?>
@@ -17,7 +14,7 @@ $resultado = $categoria->carregar();
         <div class="col-md-6 col-md-offset-2">
             <div class="form-group">
                 <label for="nome">Nome da Categoria</label>
-                <input type="text" value="<?php echo $resultado['nome']; ?>" name="nome" class="form-control">
+                <input type="text" value="<?php echo $categoria->nome ?>" name="nome" class="form-control">
             </div>
             <input type="submit" class="btn btn-success btn-block" value="Salvar">
         </div>

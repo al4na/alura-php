@@ -40,8 +40,7 @@ $lista = $categoria->listar();
                             </a>
                         </td>
                         <td>
-                            <a href="./categorias-excluir-post.php?id=
-                                <?php echo $linha['id'] ?>" class="btn btn-danger">
+                            <a href="./categorias-excluir-post.php?id=<?php echo $linha['id']; ?>" class="btn btn-danger">
                                 Excluir
                             </a>
                         </td>

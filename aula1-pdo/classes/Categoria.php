@@ -1,7 +1,5 @@
 <?php
 
-require_once 'classes/Conexao.php';
-
 class Categoria
 {
 
@@ -42,5 +40,11 @@ class Categoria
         foreach ($lista as $linha) {
             $this->nome = $linha['nome'];
         }
+    }
+
+    public function exluir(): void
+    {
+        $query = "DELETE FROM categorias where id=" . $this->id;
+        Conexao::pegarConexao()->exec($query);
     }
 }

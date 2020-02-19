@@ -1,9 +1,8 @@
 <?php
-
 class Conexao
 {
     public static function pegarConexao(): PDO
     {
-        return new PDO('mysql:host=database;dbname=estoque', 'root', 'root');
+        return new PDO(DB_DRIVE . ':host=' . DB_HOSTNAME . ';dbname=' . DB_DATABASE, DB_USERNAME, DB_PASSWORD);
     }
 }

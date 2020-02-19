@@ -1,9 +1,11 @@
 <?php
 require_once 'global.php';
 
-$categoria = new Categoria();
 $nome = $_POST['nome'];
+$id = $_POST['id'];
+
+$categoria = new Categoria($id);
 $categoria->nome = $nome;
-$categoria->inserir($nome);
+$categoria->atualizar();
 
 header('Location: categorias.php');

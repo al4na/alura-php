@@ -1,7 +1,18 @@
 <?php require_once 'global.php'; ?>
 <?php
-$categoria = new Categoria();
-$lista = $categoria->listar();
+try {
+    $categoria = new Categoria();
+    $lista = $categoria->listar();
+} catch (Exception $e) {
+    if (DEBUG) {
+        echo '<pre>';
+        print_r($e);
+        echo '</pre>';
+    } else {
+        $e->getMessage();
+        exit;
+    }
+}
 ?>
 <?php require_once 'cabecalho.php' ?>
 <div class="row">

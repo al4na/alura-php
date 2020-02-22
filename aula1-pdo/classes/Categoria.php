@@ -16,6 +16,7 @@ class Categoria
 
     public function listar()
     {
+        //throw new Exception("Erro ao listar categorias", 1);
         $query = "SELECT id, nome FROM categorias";
         $resultado = Conexao::pegarConexao()->query($query)->fetchAll();
         return $resultado;
